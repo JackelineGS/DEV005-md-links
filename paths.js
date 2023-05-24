@@ -31,7 +31,7 @@ const statusFile = (ruta) => new Promise((resolve, reject) => {
   });
 });
 
-/* statusPath('./src/documentos').then((ruta) => {
+/* statusFile('./src/documentos').then((ruta) => {
   console.log(ruta);
 }).catch((err) => {
   console.log(err);

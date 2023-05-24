@@ -1,9 +1,9 @@
 // const fs = require('fs');
 const path = require('path');
-const funciones = require('./paths');
+const { validatePath, statusDirectory, statusFile } = require('./paths');
 
 const mdLinks = (ruta) => {
-  if (funciones.statusFile(funciones.validatePath(ruta))
+  if (statusFile(validatePath(ruta))
     .then((archivo) => archivo)
     .catch((err) => {
       console.log(err);
@@ -11,7 +11,7 @@ const mdLinks = (ruta) => {
     if (path.extname(ruta) === '.md') {
       console.log('Extraer los links de este archivo');
     }
-  } else if (funciones.statusDirectory(funciones.validatePath(ruta))
+  } else if (statusDirectory(validatePath(ruta))
     .then((archivo) => archivo)
     .catch((err) => {
       console.log(err);
@@ -20,7 +20,7 @@ const mdLinks = (ruta) => {
   }
 };
 
-console.log(mdLinks('./src/documentos'));
+// console.log(mdLinks('./src/documentos'));
 
 module.exports = {
   mdLinks,
