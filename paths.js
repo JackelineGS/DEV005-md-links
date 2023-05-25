@@ -13,23 +13,27 @@ const validatePath = (route) => {
   }
 };
 
-const statusDirectory = (ruta) => new Promise((resolve, reject) => {
-  fs.stat(ruta, (err, stats) => {
-    if (err) {
-      reject(console.log('Error'));
-    }
-    resolve(stats.isDirectory());
-  });
-});
+const statusDirectory = (ruta) => {
+  const stats = fs.statSync(ruta);
+  return stats.isDirectory();
+};
 
-const statusFile = (ruta) => new Promise((resolve, reject) => {
+// console.log(statusDirectory('./src/documentos'));
+
+/* const statusFile = (ruta) => {
   fs.stat(ruta, (err, stats) => {
-    if (err) {
-      reject(console.log('Error'));
+    if (!err) {
+      console.log(stats.isFile());
     }
-    resolve(stats.isFile());
   });
-});
+}; */
+
+const statusFile = (ruta) => {
+  const stats = fs.statSync(ruta);
+  return stats.isFile();
+};
+
+// console.log(statusFile('./src/documentos/archivo.md'));
 
 /* statusFile('./src/documentos').then((ruta) => {
   console.log(ruta);

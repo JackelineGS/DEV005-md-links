@@ -1,26 +1,23 @@
-// Lee un archiivo
-// Utilicemos la librería nativa FS (FileSystem)
 const fs = require('fs');
-const path = require('path');
+// const path = require('path');
 // const fetch = require('node-fetch');
 // const axios = require('axios');
 
 const readFile = (file) => new Promise((resolve, reject) => {
   fs.readFile(file, (err, data) => {
     if (err) {
-      reject('No tiene contenido');
+      reject();
     }
     resolve(data);
   });
 });
 
-// archivo es el callback
 // .then nos permite consumir la promesa y .catch() es el manejador de excepciones
-readFile('/src/documentos/archivo.md').then((archivo) => {
+/* readFile('/src/documentos/archivo.md').then((archivo) => {
   console.log(archivo);
 }).catch((err) => {
   console.log(err);
-});
+}); */
 
 // Leer el archivo con axios
 /* const getContenido =()=> {
@@ -83,3 +80,6 @@ console.log(result); */
 // console.log(path1);
 
 // Obtener la ruta del documento local
+module.exports = {
+  readFile,
+};
