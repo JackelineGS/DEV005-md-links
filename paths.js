@@ -12,7 +12,7 @@ const validatePath = (route) => {
     return 'La ruta no existe';
   }
 };
-
+// console.log(validatePath('./src/documentos/archivo.md'));
 const statusDirectory = (ruta) => {
   const stats = fs.statSync(ruta);
   return stats.isDirectory();
