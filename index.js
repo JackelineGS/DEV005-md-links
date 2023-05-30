@@ -9,8 +9,10 @@ const mdLinks = (ruta, options) => new Promise((resolve, reject) => {
     readFile(ruta).then((result) => {
       const contenido = result;
       const expresions = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
+      const text = /(?<text>.*?)/s;
       const pathsMd = contenido.match(expresions);
       console.log(pathsMd);
+      console.log(text);
       // const validate = pathsMd.map((element) => element.split('(),[]'));
       // const pathResult = pathsMd.map((element) => path.parse(element));
       const objeto = { pathsMd };
