@@ -1,6 +1,7 @@
 const fs = require('fs');
-const axios = require('axios');
-// const path = require('path');
+// const axios = require('axios');
+// const marked = require('marked');
+// const jsdom = require('jsdom');
 
 const readFile = (file) => new Promise((resolve, reject) => {
   fs.readFile(file, 'utf8', (err, data) => {
@@ -18,10 +19,14 @@ const readFile = (file) => new Promise((resolve, reject) => {
 /* readFile('./src/documentos/archivo.md').then((result) => {
   const contenido = result;
   console.log(contenido);
-  const expresions = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
+  const expresions = /[^>]+(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
   const pathsMd = contenido.match(expresions);
   console.log(pathsMd);
 }); */
+/*const markdownText = '# Título del documento\n\nEste es un texto en formato **Markdown**.';
+const htmlContent = marked(markdownText);
+
+console.log(htmlContent);*/
 
 // Leer el archivo con axios
 /* const getContenido = () => readFile('./src/documentos/archivo.md')

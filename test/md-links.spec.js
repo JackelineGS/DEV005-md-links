@@ -24,7 +24,7 @@ describe('statusDirectory is a function', () => {
 
 describe('statusFile is a function', () => {
   it('Should be a function', () => {
-    expect(typeof statusDirectory).toBe('function');
+    expect(typeof statusFile).toBe('function');
   });
   it('Should return true or false', () => {
     const ruta = './src/documentos/archivo.md';
