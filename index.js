@@ -8,12 +8,14 @@ const mdLinks = (ruta, options) => new Promise((resolve, reject) => {
   if (statusFile(validar) && path.extname(ruta) === '.md') {
     readFile(ruta).then((result) => {
       const contenido = result;
-      const expresions = /(?<text>.*?)\s+(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
+      const expresions = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
       const pathsMd = contenido.match(expresions);
       console.log(pathsMd);
-      const pathResult = pathsMd.map((element) => path.parse(element));
-      console.log(pathResult);
-      if (options.validate === false) {
+      // const validate = pathsMd.map((element) => element.split('(),[]'));
+      // const pathResult = pathsMd.map((element) => path.parse(element));
+      const objeto = { pathsMd };
+      console.log(objeto);
+      /* if (options.validate === false) {
         const validateFalse = {
           href: 'link',
           text: 'Texto que aparece dentro del link (<a>)',
@@ -29,7 +31,7 @@ const mdLinks = (ruta, options) => new Promise((resolve, reject) => {
           ok: 'Mensaje fail en caso de fallo u Ok en caso de éxito',
         };
         console.log(validateTrue);
-      }
+      } */
     });
   } else if (statusDirectory(validar)) {
     const directory = fs.readdirSync(ruta);
