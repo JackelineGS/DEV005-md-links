@@ -13,22 +13,6 @@ const readFile = (file) => new Promise((resolve, reject) => {
   });
 });
 
-// Extraer los links de un archivo
-// Expresiones regulares
-
-/* readFile('./src/documentos/archivo.md').then((result) => {
-  const contenido = result;
-  console.log(contenido);
-const expresions = /[^>]+(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
-  const pathsMd = contenido.match(expresions);
-  console.log(pathsMd);
-}); */
-
-/* const textMd = '# Título del documento\n\nEste es un texto en formato **Markdown**.';
-const htmlCont = marked(textMd);
-
-console.log(htmlCont); */
-
 // Leer el archivo con axios
 /* const getContenido = () => readFile('./src/documentos/archivo.md')
   .then((perrito) => axios.get(`https://dog.ceo/api/breed/${perrito}/images/random`))
@@ -77,8 +61,6 @@ fs.readFile(notas, 'utf8', (error, data) => {
     console.log('Archivos:', files);
 });
 console.log(result); */
-
-// Obtener la ruta del documento local
 
 module.exports = {
   readFile,
