@@ -1,5 +1,4 @@
 const fs = require('fs');
-// const axios = require('axios');
 // const jsdom = require('jsdom');
 
 const readFiles = (file) => new Promise((resolve, reject) => {
@@ -12,11 +11,11 @@ const readFiles = (file) => new Promise((resolve, reject) => {
 });
 
 // Leer el archivo con axios
-/* const getContenido = () => readFile('./src/documentos/archivo.md')
+const getContenido = () => readFile('./src/documentos/archivo.md')
   .then((perrito) => axios.get(`https://dog.ceo/api/breed/${perrito}/images/random`))
   .catch((err) => console.log (err));
 
-getContenido().then((perro) => { console.log(perro); }); */
+getContenido().then((perro) => { console.log(perro); });
 
 // Guardar la imagen en un nuevo archivo
 /* const writePerrito = (file, imagen) => new Promise((resolve, reject) => {
