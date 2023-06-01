@@ -33,7 +33,7 @@ describe('statusFile is a function', () => {
 });
 
 describe('readFile read files', () => {
-  it('Should return a Buffer', () => {
+  it('Should return a content', () => {
     const ruta = './src/documentos/archivo.md';
     const result = 'contenido'
     return readFile(ruta).then(data => {

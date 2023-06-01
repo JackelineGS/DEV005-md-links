@@ -1,14 +1,12 @@
 const fs = require('fs');
-//
 // const axios = require('axios');
 // const jsdom = require('jsdom');
 
-const readFile = (file) => new Promise((resolve, reject) => {
+const readFiles = (file) => new Promise((resolve, reject) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
       reject();
     }
-    console.log(data);
     resolve(data);
   });
 });
@@ -63,5 +61,5 @@ fs.readFile(notas, 'utf8', (error, data) => {
 console.log(result); */
 
 module.exports = {
-  readFile,
+  readFiles,
 };
