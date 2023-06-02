@@ -1,21 +1,27 @@
 const fs = require('fs');
-// const jsdom = require('jsdom');
+const { getLinks } = require('./links');
+const { request } = require('./requestHttp');
+
+console.log(getLinks, 3);
 
 const readFiles = (file) => new Promise((resolve, reject) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
       reject();
     }
-    resolve(data);
+    resolve(getLinks(data, file));
   });
 });
 
+readFiles('C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documentos\\archivo.md')
+  .then((rest) => request(rest).then((respuesta) => console.log(respuesta)));
+
 // Leer el archivo con axios
-const getContenido = () => readFile('./src/documentos/archivo.md')
+/* const getContenido = () => readFile('./src/documentos/archivo.md')
   .then((perrito) => axios.get(`https://dog.ceo/api/breed/${perrito}/images/random`))
   .catch((err) => console.log (err));
 
-getContenido().then((perro) => { console.log(perro); });
+getContenido().then((perro) => { console.log(perro); }); */
 
 // Guardar la imagen en un nuevo archivo
 /* const writePerrito = (file, imagen) => new Promise((resolve, reject) => {
