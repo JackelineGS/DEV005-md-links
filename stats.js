@@ -29,9 +29,7 @@ const broken = (ruta) => new Promise((resolve, reject) => {
     .then((respuesta) => resolve(respuesta)));
 });
 
-// broken('./src').then((result) => console.log(result));
-
-/*const brokenLinks = (ruta) => {
+const brokenLinks = (ruta) => {
   broken(ruta).then((result) => {
     let contador = 0;
     result.forEach((element) => {
@@ -39,9 +37,10 @@ const broken = (ruta) => new Promise((resolve, reject) => {
         // eslint-disable-next-line no-plusplus
         contador++;
       }
+      return contador;
     });
-    console.log(contador);
+    console.log('Rotos', contador);
   });
 };
 
-brokenLinks('./src');*/
+brokenLinks('./src');
