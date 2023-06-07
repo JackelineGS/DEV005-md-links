@@ -1,15 +1,13 @@
 #!/usr/bin/env node
-// const { mdLinks } = require('./index');
-// chmod +x cli.js
-// const fs = require('fs');
+const { mdLinks } = require('./index');
+
 // const chalk = require('chalk');
 // process.argv = [rutaNode, rutaScript, arg1, arg2]
 const [,, ...args] = process.argv;
-// eslint-disable-next-line no-undef
-const mdlinks = (ruta, `${args}`);
-console.log(mdlinks('./src/documento.md', '--validate'));
+console.log(`Hello World ${args}`);
+// npm link
 
-const receive = process.argv.slice(2);
+/* const receive = process.argv.slice(2);
 
 if (receive.includes('--validate')) {
   console.log('Se seleccionó la opción 1');
@@ -17,7 +15,7 @@ if (receive.includes('--validate')) {
   console.log('Se seleccionó la opción 2');
 } else if (receive.includes('--stats --validate')) {
   console.log('No se seleccionó una opción válida');
-}
+} */
 
 /* md-links <path-to-file> [options]
 --validate

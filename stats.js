@@ -29,18 +29,21 @@ const broken = (ruta) => new Promise((resolve, reject) => {
     .then((respuesta) => resolve(respuesta)));
 });
 
-const brokenLinks = (ruta) => {
+const brokenLinks = (ruta) => new Promise((resolve, reject) => {
   broken(ruta).then((result) => {
     let contador = 0;
-    result.forEach((element) => {
+    result.map((element) => {
       if (!element.status === 200 || element.status === 404) {
         // eslint-disable-next-line no-plusplus
         contador++;
       }
       return contador;
     });
-    console.log('Rotos', contador);
+    resolve(contador);
   });
-};
+});
+brokenLinks('./src').then((result) => console.log(result));
 
-brokenLinks('./src');
+module.exports = {
+  brokenLinks,
+};
