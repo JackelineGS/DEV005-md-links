@@ -14,9 +14,9 @@ const entrada = args[0];
 const opcion = args[1];
 if (opcion.includes('--validate')) {
   mdLinks(entrada, { validate: true }).then((result) => {
-    const arrayResult = result.map((element) => Object.values(element));
-    const cadena = arrayResult.join(', ');
-    console.log(cadena);
+    result.forEach((element) => {
+      console.log(Object.values(element).join(', '));
+    });
   });
 } else if (opcion.includes('--stats')) {
   stats(entrada).then((result) => console.log(result));
