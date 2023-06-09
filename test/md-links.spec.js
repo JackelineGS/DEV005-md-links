@@ -83,26 +83,26 @@ describe('mdLinks', () => {
   it('Debe devolver un array de objetos', () => {
   
      const allArrays = [{
-            text: 'javascript30',
-            file: 'C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documento.md',
-            href: 'https://javascript30.com/',
-            status: 200,
-            message: 'OK'
-          },
-          {
-            text: 'javascript30',
-            file: 'C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documento.md',
-            href: 'https://javascript30.com/',
-            status: 200,
-            message: 'OK'
-          },
-          {
-            text: 'js_object',
-            file: 'C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documento.md',
-            href: 'https://www.w3schools.com/js/js_object',
-            status: 404,
-            message: 'Not Found'
-      }]
+      text: 'javascript30',
+      file: 'C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documento.md',
+      href: 'https://javascript30.com/',
+      status: 200,
+      message: 'OK'
+    },
+    {
+      text: 'javascript30',
+      file: 'C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documento.md',
+      href: 'https://javascript30.com/',
+      status: 200,
+      message: 'OK'
+    },
+    {
+      text: 'js_object',
+      file: 'C:\\Users\\user\\Desktop\\Laboratoria\\DEV005-md-links\\src\\documento.md',
+      href: 'https://www.w3schools.com/js/js_object',
+      status: 404,
+      message: 'fail'
+    }]
   
   // jest.spyOn(fs, 'axios.get').mockReturnValue()
   const route = './src/documento.md'
