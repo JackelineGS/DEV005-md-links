@@ -15,9 +15,6 @@ const readFiles = (array) => {
   return Promise.all(arrPromesas);
 };
 
-// const allArray = ['./src/documento.md', './src/documentos/archivo.md'];
-// readFiles(allArray).then((result) => console.log(result));
-
 module.exports = {
   readFiles, readFile,
 };

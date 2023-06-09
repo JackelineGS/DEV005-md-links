@@ -10,9 +10,9 @@ const request = (objectArray) => {
       return obj;
     }).catch((error) => {
       // eslint-disable-next-line no-param-reassign
-      obj.status = error.response.status;
+      obj.status = error.response ? 404 : 'error';
       // eslint-disable-next-line no-param-reassign
-      obj.message = error.response.statusText;
+      obj.message = 'fail';
       return obj;
     }));
   return Promise.all(tranformArray);
@@ -21,16 +21,3 @@ const request = (objectArray) => {
 module.exports = {
   request,
 };
-
-/* const arrayEjem = [{
-  href: 'https://javascript30.com/',
-  text: 'text',
-}, {
-  href: 'https://www.w3schools.com/js/js_object',
-  text: 'roto',
-}, {
-  href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen'
-  text: 'roto'
-}];
-
-request(arrayEjem).then((resolve) => console.log(resolve)); */

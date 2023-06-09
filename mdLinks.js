@@ -17,8 +17,6 @@ const mdLinks = (ruta, options) => new Promise((resolve, reject) => {
   }
 });
 
-// mdLinks('./src/documento.md', { validate: true }).then((result) => console.log(result));
-
 module.exports = {
   mdLinks,
 };
