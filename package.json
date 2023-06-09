@@ -1,5 +1,6 @@
 {
   "name": "md-links",
+  "author": "Jackeline García Serna <jackeline.garcia.serna@gmail.com>",
   "version": "0.1.0",
   "bin": {
     "md-links": "./cli.js"

@@ -8,7 +8,7 @@ const getLinks = (data, file) => {
     const href = document.slice('');
     const text = objetoDocu.name;
     const objeto = {
-      href, text, file,
+      text, file, href,
     };
     return objeto;
   });

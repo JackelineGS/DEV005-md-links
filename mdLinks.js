@@ -2,6 +2,7 @@ const { validatePath } = require('./paths');
 const { readFiles } = require('./readArrays');
 const { request } = require('./request');
 const { getmdPath } = require('./recursividad');
+const { stats } = require('./stats');
 
 const mdLinks = (ruta, options) => new Promise((resolve, reject) => {
   const rutaValida = validatePath(ruta);
@@ -9,8 +10,10 @@ const mdLinks = (ruta, options) => new Promise((resolve, reject) => {
   if (options.validate === true) {
     readFiles(mdArray).then((rest) => request(rest.flat())
       .then((respuesta) => resolve(respuesta)).catch((error) => reject(error)));
-  } else {
-    readFiles(mdArray).then((rest) => resolve(rest.flat()));
+  } else if (options.stats) resolve(stats(ruta));
+
+  else {
+    readFiles(mdArray).then((rest) => resolve(rest.flat())).catch((error) => reject(error));
   }
 });
 

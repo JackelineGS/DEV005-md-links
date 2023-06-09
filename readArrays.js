@@ -4,7 +4,7 @@ const { getLinks } = require('./links');
 const readFile = (file) => new Promise((resolve, reject) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
-      reject();
+      reject(err);
     }
     resolve(getLinks(data, file));
   });
@@ -15,8 +15,8 @@ const readFiles = (array) => {
   return Promise.all(arrPromesas);
 };
 
-// const arraysEjem = ['./src/documento.md', './src/documentos/archivo.md', './src/Ejemplos/README.md'];
-// readFiles(arraysEjem).then((result) => console.log(result));
+// const allArray = ['./src/documento.md', './src/documentos/archivo.md'];
+// readFiles(allArray).then((result) => console.log(result));
 
 module.exports = {
   readFiles, readFile,

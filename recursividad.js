@@ -20,9 +20,6 @@ const getmdPath = (ruta) => {
   return newArray;
 };
 
-// getmdPath('./src');
-// console.log(getmdPath('./src'));
-
 module.exports = {
   getmdPath,
 };
