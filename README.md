@@ -29,11 +29,11 @@ A partir de ello se ha propuesto la creación una herramienta usando [Node.js](h
 
 ## 2. Instalación
 
-Para instalar el módulo lo realizaremos mediante **npm**, para ello utilizaremos el siguiente comando: `npm i md-linksdev005 -g`.
+Para instalar el módulo lo realizaremos mediante **npm**, para ello utilizaremos el siguiente comando: `npm i jg-mdlinks -g`.
 
 ## 3. Descripción del proyecto
 
-Para poder usar el módulo es necesario importarlo usando require('md-linksdev005')
+Para poder usar el módulo es necesario importarlo usando require('jg-mdlinks')
 
 ### Descripción de JavaScriptAPI 
 
